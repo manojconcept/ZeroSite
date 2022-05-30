@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export default function DataProvider() {
+const DataContext = React.createContext<| null>(null);
+
+export default function DataProvider(props:any) {
+    
+    useEffect(() => {
+        console.log('DataProvider on Mount props',props);
+    }, []);
   return (
-    <div>DataContext</div>
+      <div>DC</div>
   )
 }
