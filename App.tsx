@@ -10,10 +10,9 @@ import Dashboard from './src/pages/Dashboard/Dashboard'
 import UserRoles from './src/pages/UserRoles/UserRoles'
 import Users from './src/pages/Users/Users'
 //------------------------------------------------------------------------------->css
-import "./src/assets/libraries/bootstrap/css/bootstrap.min.css";
-import "./src/assets/libraries/fontawesome/css/all.min.css";
+import "./src/libraries/Bootstrap5.1.3/dist/css/bootstrap.min.css";
+import "./src/libraries/fontawesomeFW6.1.1/css/all.min.css";
 import "./src/assets/css/style.css";
-
 //-------------------------------------------------------------------------------->js
 import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/js/bootstrap.bundle.js";
@@ -22,6 +21,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 const xhr = new XMLHttpRequest();
 
 // listen for `onload` event
+//---------(xhr.onreadystatechange is used to support old browsers !)----------->Important
 xhr.onload = () => {
     // process response
     if (xhr.readyState==4 && xhr.status == 200) {
@@ -32,7 +32,7 @@ xhr.onload = () => {
     }
 };
 // create a `GET` request
-xhr.open('GET', 'https://jsonplaceholder.typicode.com/user');
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
 // send request
 xhr.send();
 //---------------------------------------------------------------------------------->XHRHttpRequest
